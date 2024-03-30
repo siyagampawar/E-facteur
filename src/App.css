@@ -2,22 +2,14 @@
     display:flex;
     overflow-y:hidden;
     overflow-x: scroll;
-    width: 1000px;
+    width: 100%;
     height: 450px;
     text-align: center;
-    margin-top:0px;
-    margin-left:20%;
+    margin-inline-start: auto;
+    /* margin-top:0px; */
+    /* margin-left:8%; */
      
 }
-.Header{
-    margin-top:40px;
-    margin-bottom:0px;
-    height:400px;
-    width:1000px;
-    color:black;
-    margin-left:25%;
-}
-
 .App{
     display:inline;
 }

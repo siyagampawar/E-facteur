@@ -1,10 +1,10 @@
 import React from 'react';
-import '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/Reviwe.css'
-import five from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/five.png'
-import four from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/four.png'
-import three from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/three.png'
-import two from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/two.png'
-import one from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/one.png'
+import '../style/reviwe.css'
+import five from '../images/five.png'
+import four from '../images/four.png'
+import three from '../images/three.png'
+import two from '../images/two.png'
+import one from '../images/one.png'
 export default function Review(props){
     var stars
     if(props.stars==="5"){
@@ -23,7 +23,7 @@ export default function Review(props){
         stars=one
     }
     return(
-        <div className="reviewcard">
+        <div className="reviewcard" >
             <h1 className='review--head'>{props.head}</h1>
             <h3 className='review--details'>{props.details}</h3>
             <img src={stars} alt="" className='review--image' />

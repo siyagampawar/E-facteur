@@ -11,13 +11,13 @@ import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MicrosoftIcon from '@mui/icons-material/Microsoft';
 import Grid from '@mui/material/Grid';
-import vector1 from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/vector11.png'
-import vector2 from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/vector12.png'
-import vector3 from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/vector13.png'
-import vector21 from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/vector21.png'
-import vector22 from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/vector22.png'
-import vector23 from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/vector23.png'
-import nameLogoVector from '/Users/sharvarisoparkar/Desktop/E-facteur/e-facteur_website/src/Logo(1).png'
+import vector1 from '../images/loginSingupPgImgs/vector11.png'
+import vector2 from '../images/loginSingupPgImgs/vector12.png'
+import vector3 from '../images/loginSingupPgImgs/vector13.png'
+import vector21 from '../images/loginSingupPgImgs/vector21.png'
+import vector22 from '../images/loginSingupPgImgs/vector22.png'
+import vector23 from '../images/loginSingupPgImgs/vector23.png'
+import nameLogoVector from '../images/loginSingupPgImgs/Logo(1).png'
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -86,18 +86,6 @@ const Tagline = {
   fontWeight: '900px',
   margin:'0px',
 }
-
-const ProSpan = styled('span')({
-  display: 'inline-block',
-  height: '1em',
-  width: '1em',
-  verticalAlign: 'middle',
-  marginLeft: '0.3em',
-  marginBottom: '0.08em',
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  backgroundImage: 'url(https://mui.com/static/x/pro.svg)',
-});
 
 
 const Login = (props) => {

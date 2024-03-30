@@ -1,15 +1,15 @@
 .reviewcard{
-    width: 872px;
-    height: 350px;
+    width: 850px;
+    height: 340px;
     flex-shrink: 0;
     border-radius: 16px;
     background: var(--Theme-Colors-White, #FFF);
     box-shadow: 0px 0px 20px 5px rgba(0, 19, 119, 0.05);
     text-align: center;
-    margin-right:40px;
+    margin-right:30px;
     margin-top:20px;
     margin-bottom:20px;
-    margin-left:50px;
+    margin-left:30px;
     
 }
 .review--head{
@@ -32,7 +32,9 @@
     background-color:var(--Theme-Colors-White, #FFF);
     text-align: right;
     margin-left:auto;
+    margin-bottom: 0px;
     padding-right:40px;
+    padding-bottom: 0%;
 }
 .review--name{
 color: var(--Gray-1000, #222132);
@@ -41,7 +43,6 @@ font-family: Raleway;
 font-size: 16px;
 font-style: normal;
 font-weight: 700;
-line-height: 120%; 
 }
 .review--des{
 color: var(--Gray-800, #464558);
@@ -49,6 +50,4 @@ font-family: Raleway;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 120%;
-
 }
