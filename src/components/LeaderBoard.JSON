@@ -1,0 +1,151 @@
+[
+    {
+     "DeliveryPartnerIDBrandWise": 1,
+     "DeliveryPartnerName": "DTDC",
+     "Ranking": 3,
+     "CityStationCode": "NGP",
+     "CityName": "Nagpur"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 2,
+     "DeliveryPartnerName": "Blue Dart",
+     "Ranking": 3.6,
+     "CityStationCode": "SBC",
+     "CityName": "Bangalore"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 3,
+     "DeliveryPartnerName": "DHL",
+     "Ranking": 4,
+     "CityStationCode": "CSMT",
+     "CityName": "Mumbai"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 4,
+     "DeliveryPartnerName": "Ekart Logistics",
+     "Ranking": 4.42,
+     "CityStationCode": "DLI",
+     "CityName": "Delhi"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 5,
+     "DeliveryPartnerName": "Shadowfax",
+     "Ranking": 3.89,
+     "CityStationCode": "UDZ",
+     "CityName": "Udaipur"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 6,
+     "DeliveryPartnerName": "Gati",
+     "Ranking": 2.1,
+     "CityStationCode": "LC",
+     "CityName": "Lucknow"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 7,
+     "DeliveryPartnerName": "Ecom Express",
+     "Ranking": 1.9,
+     "CityStationCode": "GHY",
+     "CityName": "Guwahati"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 8,
+     "DeliveryPartnerName": "FedEx",
+     "Ranking": 3.9,
+     "CityStationCode": "NGP",
+     "CityName": "Nagpur"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 9,
+     "DeliveryPartnerName": "Gati",
+     "Ranking": 4.1,
+     "CityStationCode": "SBC",
+     "CityName": "Bangalore"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 10,
+     "DeliveryPartnerName": "DTDC",
+     "Ranking": 3.2,
+     "CityStationCode": "CSMT",
+     "CityName": "Mumbai"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 11,
+     "DeliveryPartnerName": "Ecom Express",
+     "Ranking": 4.5,
+     "CityStationCode": "DLI",
+     "CityName": "Delhi"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 12,
+     "DeliveryPartnerName": "UPS",
+     "Ranking": 3.5,
+     "CityStationCode": "UDZ",
+     "CityName": "Udaipur"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 13,
+     "DeliveryPartnerName": "Blue Dart",
+     "Ranking": 4.1,
+     "CityStationCode": "LC",
+     "CityName": "Lucknow"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 14,
+     "DeliveryPartnerName": "FedEx",
+     "Ranking": 3.6,
+     "CityStationCode": "GHY",
+     "CityName": "Guwahati"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 15,
+     "DeliveryPartnerName": "India Post",
+     "Ranking": 4.4,
+     "CityStationCode": "NGP",
+     "CityName": "Nagpur"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 16,
+     "DeliveryPartnerName": "Safe Express",
+     "Ranking": 4.8,
+     "CityStationCode": "SBC",
+     "CityName": "Bangalore"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 17,
+     "DeliveryPartnerName": "BlueDart",
+     "Ranking": 3.1,
+     "CityStationCode": "CSMT",
+     "CityName": "Mumbai"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 18,
+     "DeliveryPartnerName": "DHL",
+     "Ranking": 4.2,
+     "CityStationCode": "DLI",
+     "CityName": "Delhi"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 19,
+     "DeliveryPartnerName": "Aramex",
+     "Ranking": 4.1,
+     "CityStationCode": "UDZ",
+     "CityName": "Udaipur"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 20,
+     "DeliveryPartnerName": "Shadowfax",
+     "Ranking": 0.1,
+     "CityStationCode": "LC",
+     "CityName": "Lucknow"
+    },
+    {
+     "DeliveryPartnerIDBrandWise": 21,
+     "DeliveryPartnerName": "Aramex",
+     "Ranking": 4.5,
+     "CityStationCode": "GHY",
+     "CityName": "Guwahati"
+    }
+   ]
+   
+   

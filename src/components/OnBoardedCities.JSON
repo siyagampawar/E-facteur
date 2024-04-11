@@ -1,0 +1,40 @@
+{
+    "OnBoardedCities":
+    [
+        {
+         "CityStationCode": "NGP",
+         "CityName": "Nagpur",
+         "OnBoardedDate": "01/11/2020"
+        },
+        {
+         "CityStationCode": "SBC",
+         "CityName": "Bangalore",
+         "OnBoardedDate": "04/12/2022"
+        },
+        {
+         "CityStationCode": "CSMT",
+         "CityName": "Mumbai",
+         "OnBoardedDate": "09/11/2023"
+        },
+        {
+         "CityStationCode": "DLI",
+         "CityName": "Delhi",
+         "OnBoardedDate": "11/14/2022"
+        },
+        {
+         "CityStationCode": "UDZ",
+         "CityName": "Udaipur",
+         "OnBoardedDate": "05/15/2024"
+        },
+        {
+         "CityStationCode": "LC",
+         "CityName": "Lucknow",
+         "OnBoardedDate": "07/07/2023"
+        },
+        {
+         "CityStationCode": "GHY",
+         "CityName": "Guwahati",
+         "OnBoardedDate": "05/09/2023"
+        }
+       ]
+}
