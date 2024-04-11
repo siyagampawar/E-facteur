@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style/navbar.css';
 import logo from '../images/landingPageImgs/Logo_p.png'
 import profileImage from '../images/landingPageImgs/profileImage.png'
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <nav>
         <div className="navbar">
@@ -15,9 +16,13 @@ const Navbar = () => {
               <li>HOME</li>
               <li>CONTACT US</li>
               <li>MY ORDER</li>
-              <li> <a href="##"><img src={profileImage} alt=""/></a> </li>
+              {isLoggedIn ? (
+                <li> <a href="##"><img src={profileImage} alt="Profile"/></a> </li>
+              ) : (
+                <li> <a href="/login">Login / SingUp</a> </li>
+              )}
             </ul>
-          </div>
+          </div> 
         </div>
     </nav>
   );

@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 import { TextField, Box, Button, Typography, styled } from '@mui/material';
 import { useState, useEffect} from 'react';
@@ -23,9 +24,11 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import { auth } from "./config"; 
-import {provider} from "./config";
+import { auth, provider,provider1 } from "./config";
 import {signInWithPopup} from "firebase/auth";
+import { useContext } from 'react';
+import { DataContext } from '../context/DataProvider';
+
 const Component = styled(Box)`
     padding: 25px 35px;
     display: flex;
@@ -36,7 +39,6 @@ const Component = styled(Box)`
         margin-top: 20px;
     }
 `;
-
 const OuterBox =styled(Box)`
     justify-content: flex-start;
     border-radius: 30px; 
@@ -44,10 +46,8 @@ const OuterBox =styled(Box)`
     margin: auto;
     margin-top :50px
 `;
-
 const TaglineBox =styled(Box)` 
 `;
-
 const LoginButton = styled(Button)`
     text-transform: none;
     background: #FB641B;
@@ -89,10 +89,10 @@ const Tagline = {
 
 
 const Login = (props) => {
-
+  const { setAccount } = useContext(DataContext);
   const [account, toggleAccount] = useState('login');
-  const [login, setLogin] = useState({username: '',password: ''});
-  const [signup, setSignup] = useState({ name: '',username: '',password: ''});
+  const [login, setLogin] = useState({Fullname: '',password: ''});
+  const [signup, setSignup] = useState({ Fullname: '',Email: '',Gender:'',DateOfBirth:'',phone:'',password: '',confirmPasswaord:''});
   const [error, showError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [value,setValue] = useState('')
@@ -107,36 +107,72 @@ const Login = (props) => {
 const toggleSignup = () => {
   account === 'signup' ? toggleAccount('login') : toggleAccount('signup');
 }
-const handleClick =()=>{
+const handleClick1 =()=>{
   signInWithPopup(auth,provider).then((data)=>{
       setValue(data.user.email)
       localStorage.setItem("email",data.user.email)
       navigate('/home');
   })
 }
-const handleSignUp =async (e)=>{
-  const { name,username,password} = signup;
-  e.preventDefault();
-  const options ={
-    method : 'POST',
-    headers:{
-      'Content-type':'application/json'
-    },
-    body:JSON.stringify({
-      name,username,password
-    })
-  }
-  const res = await fetch(
-    'https://newef-2bcd7-default-rtdb.firebaseio.com/UserData.json',
-    options
-    )
-    if(res){
-      alert("Message Sent ")
-    }
-    else{
-      alert("Error Sent ")
-    }
+const handleClick2 =()=>{
+  signInWithPopup(auth,provider1).then((data)=>{
+      setValue(data.user.email)
+      localStorage.setItem("email",data.user.email)
+      navigate('/home');
+  })
+  
 }
+const handleSignUp =async (e)=>{
+  const {  Fullname,Email,Gender,DateOfBirth,phone,password,confirmPasswaord} = signup;
+  e.preventDefault();
+  if(confirmPasswaord == password){
+    const options ={
+      method : 'POST',
+      headers:{
+        'Content-type':'application/json'
+      },
+      body:JSON.stringify({
+        Fullname,Email,Gender,DateOfBirth,phone,password,confirmPasswaord,
+      })
+    }
+    const res = await fetch(
+      'https://newef-2bcd7-default-rtdb.firebaseio.com/UserData.json',
+      options
+      )
+      if(res){
+        alert("Message Sent ")
+      }
+      else{
+        alert("Error Sent ")
+      }
+  }else{
+    alert("Password and confirm password are diff")
+  }
+}
+const handleLogin = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.get('https://newef-2bcd7-default-rtdb.firebaseio.com/UserData.json');
+    const userData = response.data;
+
+    // Loop through each user in the database
+    for (const userId in userData) {
+      const user = userData[userId];
+
+      // Check if the entered Fullname and password match with any user's data
+      if (user.Fullname === login.Fullname && user.password === login.password) {
+        navigate("/home", { state: { id: user.Fullname } });
+        return; // Exit the function after successful login
+      }
+    }
+
+    // If no user found with the entered credentials
+    alert("User does not exist or incorrect password");
+  } catch (error) {
+    console.error('Error occurred while logging in:', error);
+    alert("Something went wrong. Please try again later.");
+  }
+};
 
 const onValueChange = (form, field, value) => {
   if (form === 'login') {
@@ -147,7 +183,6 @@ const onValueChange = (form, field, value) => {
 };
 
 return (
-    
     <div class="background-container" style={{width:'100%'}}>
     <Box sx={{ flexGrow: 2 }}>
       <Grid container spacing={1}>
@@ -189,15 +224,15 @@ return (
         {
         account === 'login' ?
           <Component className='loginBox'>
-              <TextField id="outlined-basic1"  onChange={(e) => onValueChange('login', 'username', e.target.value)}value={login.username} label="UserName" variant="outlined" />
+              <TextField id="outlined-basic1"  onChange={(e) => onValueChange('login', 'Fullname', e.target.value)}value={login.Fullname} label="UserName" variant="outlined" />
               <TextField
-        id="outlined-basic2"
-        type={showPassword ? 'text' : 'password'}  // Toggle between text and password
-        onChange={(e) => onValueChange('login', 'password', e.target.value)}
-        value={login.password}
-        label="Password"
-        variant="outlined"
-        InputProps={{
+                id="outlined-basic2"
+                type={showPassword ? 'text' : 'password'}  // Toggle between text and password
+                onChange={(e) => onValueChange('login', 'password', e.target.value)}
+                value={login.password}
+                label="Password"
+                variant="outlined"
+                InputProps={{
           endAdornment: (
             <InputAdornment position="end">
               <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
@@ -208,16 +243,16 @@ return (
         }}
       />
               {error && <Error>{error}</Error>}
-              <LoginButton variant="contained" >Login</LoginButton>
+              <LoginButton variant="contained" onClick={(e)=> handleLogin(e)} >Login</LoginButton>
               <Text style={{ textAlign: 'center' }}>OR</Text>
               <SignupButton onClick={() => toggleSignup()} style={{ marginBottom: 20 }}>Create an account</SignupButton> 
           
               <Stack direction="row" spacing={4} style={{marginLeft:'30px', marginTop:'0px'}}>
               
-              <Button variant="outlined" style={{background:'white'}} onClick={handleClick}>
+              <Button variant="outlined" style={{background:'white'}} onClick={handleClick1}>
                   <GoogleIcon></GoogleIcon>
                 </Button>
-                <Button variant="outlined" style={{background:'white'}}>
+                <Button variant="outlined" style={{background:'white'}} onClick={handleClick2}>
                   <MicrosoftIcon></MicrosoftIcon>
                 </Button>
                 <Button variant="outlined" style={{background:'white'}}>
@@ -227,14 +262,15 @@ return (
           </Component>
           :
           <Component className='signInBox'>
-              <TextField id="outlined-basic1" label="Full Name"onChange={(e) => onValueChange('signup', 'name', e.target.value)}     value={signup.name} variant="outlined" />
-              <TextField id="outlined-basic2" label="Email id" onChange={(e) => onValueChange('signup', 'username', e.target.value)} value={signup.username}variant="outlined" />
+              <TextField id="outlined-basic1" label="Full Name"onChange={(e) => onValueChange('signup', 'Fullname', e.target.value)}     value={signup.Fullname} variant="outlined" />
+              <TextField id="outlined-basic2" label="Email id" onChange={(e) => onValueChange('signup', 'Email', e.target.value)} value={signup.Email}variant="outlined" />
               <FormControl>
                 <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
                 <RadioGroup
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
+                  onChange={(e) => onValueChange('signup', 'Gender', e.target.value)}
                 >
                   <FormControlLabel value="female" control={<Radio />} label="Female" />
                   <FormControlLabel value="male" control={<Radio />} label="Male" />
@@ -243,22 +279,22 @@ return (
               </FormControl>
               <FormLabel id="demo-row-radio-buttons-group-label">Date of birth</FormLabel>
               
-              <input style={{ height: '55px' , backgroundColor:'transparent' , borderRadius:'3.5px',boxShadow:'inherit',border: '1px solid #C3BEB5'}} type="date" id="birthday" name="birthday" />
-              <TextField id="outlined-basic3" type="Phone Number"label="Phone Number" onChange={(e) => onValueChange('signup', 'password', e.target.value)} value={signup.password}variant="outlined" />
-              <TextField id="outlined-basic3" type="password"label="Password" onChange={(e) => onValueChange('signup', 'password', e.target.value)} value={signup.password}variant="outlined" />
-              <TextField id="outlined-basic3" type="password"label="Confirm Password" onChange={(e) => onValueChange('signup', 'password', e.target.value)} value={signup.password}variant="outlined" />
+              <input style={{ height: '55px' , backgroundColor:'transparent' , borderRadius:'3.5px',boxShadow:'inherit',border: '1px solid #C3BEB5'}} type="date" id="birthday" name="birthday"  onChange={(e) => onValueChange('signup','DateOfBirth', e.target.value)}/>
+              <TextField id="outlined-basic3" type="Phone Number"label="Phone Number" onChange={(e) => onValueChange('signup', 'phone', e.target.value)} value={signup.phone}variant="outlined" />
+              <TextField id="outlined-basic4" type="password"label="Password" onChange={(e) => onValueChange('signup', 'password', e.target.value)} value={signup.password}variant="outlined" />
+              <TextField id="outlined-basic5" type="password"label="Confirm Password" onChange={(e) => onValueChange('signup', 'confirmPasswaord', e.target.value)} value={signup.confirmPasswaord}variant="outlined" />
               
-              <SignupButton onClick={handleSignUp}>Signup</SignupButton>
+              <SignupButton onClick={handleSignUp} >Signup</SignupButton>
               <Text style={{ textAlign: 'center' }}>OR</Text>
               <LoginButton variant="contained" onClick={() => toggleSignup()}style={{ marginBottom: 20 }}>Already have an account</LoginButton>
               <Stack direction="row" spacing={4} style={{marginLeft:'30px', marginTop:'0px'}}>
-                <Button variant="outlined" style={{background:'white'}}>
+                <Button onClick={handleClick1} variant="outlined" style={{background:'white'}} >
                   <GoogleIcon></GoogleIcon>
                 </Button>
                 <Button variant="outlined" style={{background:'white'}}>
                   <MicrosoftIcon></MicrosoftIcon>
                 </Button>
-                <Button variant="outlined" style={{background:'white'}}>
+                <Button onClick={handleClick2} variant="outlined" style={{background:'white'}}>
                   <FacebookIcon></FacebookIcon>
                 </Button>
               </Stack>
