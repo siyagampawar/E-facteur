@@ -150,6 +150,7 @@ const handleSignUp =async (e)=>{
   }
 }
 const handleLogin = async (e) => {
+  setAccount({ Fullname: login.Fullname });
   e.preventDefault();
   try {
     const response = await axios.get('https://newef-2bcd7-default-rtdb.firebaseio.com/UserData.json');
@@ -161,6 +162,7 @@ const handleLogin = async (e) => {
 
       // Check if the entered Fullname and password match with any user's data
       if (user.Fullname === login.Fullname && user.password === login.password) {
+        
         navigate("/home", { state: { id: user.Fullname } });
         return; // Exit the function after successful login
       }

@@ -12,9 +12,9 @@ import Design from './Design';
 function Home() {
     const navigate = useNavigate();
     const auth = getAuth();
-    const data1=data.map((item)=>(
-        <Review head={item.head} details={item.details} stars={item.stars} name={item.name} des={item.des}/>
-      ) )
+    const data1 = data.map((item, index) => (
+        <Review key={index} head={item.head} details={item.details} stars={item.stars} name={item.name} des={item.des} />
+      ));
     const handleLogout = () => {
         signOut(auth)
             .then(() => {

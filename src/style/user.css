@@ -1,0 +1,54 @@
+.form{
+    font-size:15px; 
+}
+.Form1{
+    height: 100%;
+    width:100%;
+    display:flex;
+    margin : 100px;
+    text-align: justify;
+    margin-left:350px;
+    font-size:25px;
+}
+.Form2{
+    height: 100%;
+    width:100%;
+    display:flex;
+    text-align: justify;
+    margin-left:70%;
+    font-size:25px ;
+}
+ .title{
+    /* background-color: rgb(215, 107, 56); 
+    color: aliceblue ;
+    border-radius:10px;
+    margin : 10px; */
+    margin-top:20%;
+    /* text-align: center;
+    padding:10px;
+    height:40px;
+    width:25px; */
+} 
+
+.button{
+    padding: 10px 15px;
+    height:80px;
+    width:200px;
+    font-size: 20px;
+    background-color: rgb(215, 107, 56);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    margin-top:80px;
+    margin-left:28%;
+    font-size:30px;
+}
+
+input{
+    width: 500px;
+    height:80px;
+    border-radius: 10px;
+    font-size:35px;
+}

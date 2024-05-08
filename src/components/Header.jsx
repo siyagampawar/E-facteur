@@ -18,7 +18,7 @@ const Header = () => {
       <span><br /></span>
         <span>
           TOP DELIVERY<br/>
-          HEROS....
+          HEROES....
         </span>
         <Leader/>
       </div>

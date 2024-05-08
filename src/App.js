@@ -5,19 +5,28 @@ import Login from './components/loginSignupPage';
 import Home from './components/Home';
 import './App.css'
 import DataProvider from './context/DataProvider';
-
+import DeliveryPartnerList from './components/DeliveryPartnerList';
+import AppWrapper from "../src/components/AppWrapper";
+import User from './components/User';
+import PriceCalculation from './components/PriceCalculation';
 const App = () => {
     return (
     <div>
+        
+        <DataProvider>
         <Router>
+
             <Routes>
                 <Route path="/home" element={<Home />} />
-                <DataProvider>
+                <Route path="/leaderBoard" element={<DeliveryPartnerList/>} />
                 <Route path="/login" element={<Login />} />
-                </DataProvider>
+                <Route path="/DistForm" element={<User />} />
+                <Route path="/PriceForm" element={<PriceCalculation />} />
                 <Route path="/" element={<Navigate to="/home"/>} />
             </Routes>
         </Router>
+        </DataProvider>
+        
       </div>
     );
 };
