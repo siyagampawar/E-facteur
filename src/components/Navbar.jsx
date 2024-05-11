@@ -13,8 +13,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import DataProvider from '../context/DataProvider';
-import profileImg from '../images/profileImg.jpeg'
 import { DataContext } from '../context/DataProvider';
 const Navbar = () => {
   debugger
@@ -69,19 +67,18 @@ const Navbar = () => {
           </div>
           <div className="elements">
             <ul>
-              <li>HOME</li>
+              <li><a style={{textDecoration:'none',textDecorationColor:'black',color:'black'}} href="/">HOME</a></li>
               <li>CONTACT US</li>
               <li>MY ORDER</li>
               {isLoggedIn ? (
-                <li> <a href="##"><img src={profileImage} alt="Profile"/></a> </li>
+                <li> <a style={{textDecoration:'none',color:'black'}}><img style={{textDecoration:'none',color:'black'}} src={profileImage} alt="Profile"/></a> </li>
               ) : (
-                <li> <a href="/login">Login / SingUp</a> </li>
+                <li> <a style={{textDecoration:'none',color:'black'}}href="/login">Login / SignUp</a> </li>
               )}
               <li>
-              <div>
-      {['right'].map((anchor) => (
+              <div style={{marginBottom:'0px'}}>{['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <Button onClick={toggleDrawer(anchor, true)} style={{textDecoration:'none',height:'min-content',color:'black',fontSize:'15px',fontWeight:'bold'}}>Profile</Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

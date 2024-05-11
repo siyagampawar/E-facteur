@@ -1,5 +1,6 @@
 
-header {
+.header-content {
+  flex-direction: row;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -9,20 +10,20 @@ header {
   .heading2 {
     text-align: right;
     color: #100000;
-    font-size: 35px;
+    font-size: 40px;
     font-family: 'Inter';
     font-style: italic;
     font-weight: bolder;
     text-transform: uppercase;
     word-wrap: break-word;
-    margin-right: 65px; 
-    margin-bottom:120px;
+    margin-right: 100px; 
+    margin-bottom:160px;
     margin-top:200px;
   }
 
   .heading1 {
     position: absolute;
-    margin-top: 0px; 
+    margin-top: 80px; 
     left: 40px; 
     color: #100000;
     font-size: 40px; 

@@ -44,7 +44,7 @@ const Leader = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-leader">
       <div className="img1">
         <img src={Rectangle1} alt="b" />
         <p>{img3Name} <br></br>{img3Rank}</p>

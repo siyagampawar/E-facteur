@@ -4,10 +4,10 @@ import Leader from './leader';
 
 const Header = () => {
   return (
-    <header>
+    <header className='header-content'>
       <div className="heading2">
         <span><br /></span>
-        <span>
+        <span className='span-header'>
           Connecting Cities,<br />
           Delivering Smiles-<br />
           Your Preferred <br />

@@ -8,9 +8,8 @@ import Navbar from './Navbar';
 import Header from './Header.jsx';
 import CourrierTable from './Courrier_data';
 import Design from './Design';
-import Button from '@mui/material/Button';
-import DocumentForm from "./DocumentForm.js";
-function Home() {
+
+function HomeService() {
     const navigate = useNavigate();
     const auth = getAuth();
     const data1 = data.map((item, index) => (
@@ -28,29 +27,27 @@ function Home() {
                 console.error('Error signing out:', error);
             });
     };
-    const handleplus=()=>{
-        navigate('/LoginForm'); 
-    }
     return (
         <>
-            <div className="App" style={{}}>  
+            <div className="App">  
             <Navbar />
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+  <iframe title="Dashboard e-facteur" width="1240" height="741.25" src="https://app.powerbi.com/reportEmbed?reportId=ac21d564-28b4-4d9d-b253-3d9efd95ccbd&autoAuth=true&ctid=0ed51ad7-52cc-4234-b54a-76b82d40b5c3" frameborder="0" allowFullScreen="true"></iframe>
+</div>
+
             {/* <button onClick={handleLogout}>Logout</button> */}
-            <Header />
-            <CourrierTable/>
-            <Button onClick={handleplus} style={{borderRadius:'1000px',width:'20px',height:'60px',justifyContent:'center',display:'flex',marginLeft:'690px' ,marginTop:'20px'}}variant="contained" color="success">
-                +
-            </Button>
-            <Design/>
-            <div className='Header'> 
+            {/* <Header /> */}
+            {/* <CourrierTable/> */}
+            {/* <Design/> */}
+            {/* <div className='Header'> 
             <HeaderK />
             </div>
                 <div className='List'>
                     {data1}
-                </div> 
-            </div> 
+    </div> */}
+            </div>  
         </>
     );
 }
 
-export default Home;
+export default HomeService;
