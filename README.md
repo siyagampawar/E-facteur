@@ -3,6 +3,7 @@ A comprehensive web application for efficient online courier service management.
 •	E-Facteur aims to revolutionize package delivery by addressing user challenges like pricing transparency and service reliability.
 
 Checkout the test branch for code:
+
 Login:
 ![image](https://github.com/siyagampawar/E-facteur/assets/115725393/61926011-0b1f-4586-9830-6844606a67d0)
 
@@ -25,8 +26,16 @@ Price Comparison:
 
 
 Contributors:
-•	Sharvari Soparkar,
-•	Siya Gampawar,
-•	Aadi Ringay,
-•	Ketan Polawar,
-•	Om Sangamwar.
+•	Sharvari Soparkar
+
+
+•	Siya Gampawar
+
+
+•	Aadi Ringay
+
+
+•	Ketan Polawar
+
+
+•	Om Sangamwar
